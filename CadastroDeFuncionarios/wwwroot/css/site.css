@@ -1,0 +1,184 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.field-validation-error{
+    color: brown;
+    font-size: 12px;
+}
+
+.close-alert{
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    border-radius: 15px;
+    width: 30px;
+    height: 31px;
+}
+
+
+
+:root {
+    --defalt-color: #19370D;
+}
+
+::selection {
+    background-color: var(--defalt-color);
+    color: white;
+}
+
+body {
+    min-height: 10vh;
+    
+    align-items: center;
+    justify-content: center;
+    background-color: #f0eeee;
+    padding: 2px;
+}
+
+
+.containerlogin {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: space-around;
+    background: rgb(255, 255, 255);
+    padding: 40px 30px;
+    border-radius: 8px;
+}
+
+    .containerlogin .login-form .title {
+        position: relative;
+        font-size: 24px;
+        font-weight: 500;
+        color: #333;
+    }
+
+        .containerlogin .login-form .title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 25px;
+            background-color: var(--defalt-color);
+        }
+
+    .containerlogin .login-form .input-boxlogin {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        width: 100%;
+        margin: 10px 0;
+        position: relative;
+    }
+
+        .containerlogin .login-form .input-boxlogin input {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            border: none;
+            padding: 0 30px;
+            font-size: 16px;
+            font-weight: 500;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+            .containerlogin .login-form .input-boxlogin input:focus,
+            .containerlogin .login-form .input-boxlogin input:valid {
+                border-color: var(--defalt-color);
+            }
+
+            .containerlogin .login-form .input-boxlogin input[type="submit"] {
+                background-color: var(--defalt-color);
+                border: 0;
+                color: #fff;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+        .containerlogin .login-form .input-boxlogin i {
+            position: absolute;
+            color: var(--defalt-color);
+            font-size: 17px;
+        }
+
+    .containerlogin .login-form .forgot a {
+        color: var(--defalt-color);
+        text-decoration: none;
+    }
+
+    .containerlogin .login-form .divider {
+        text-align: center;
+        margin: 10px;
+        font-size: 18px;
+    }
+
+    .containerlogin .login-form .medias-sociais {
+        text-align: center;
+    }
+
+        .containerlogin .login-form .medias-sociais i {
+            margin: 10px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+            .containerlogin .login-form .medias-sociais i:hover {
+                color: var(--defalt-color);
+            }
+
+    .containerlogin .login-form .sigup-text a {
+        color: var(--defalt-color);
+        text-decoration: none;
+    }
+
+    .containerlogin .login-img {
+        width: 50%;
+    }
+
+@media(max-width:800px) {
+    .login-img {
+        display: none;
+    }
+}
+
+
+
+
+
+
+.container {
+    padding: 2em;
+}
+
+.card {
+    background-color: white;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+

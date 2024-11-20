@@ -1,0 +1,50 @@
+﻿@model RedefinirSenhaModel
+
+@{
+    Layout = "_LayoutDeslogado";
+    ViewData["Title"] = "Redefinir Senha";
+}
+
+<div class="containerlogin">
+
+    <!-- Inicio Form Login -->
+
+    <div class="login-form">
+        <div class="title">Redefinir Senha</div>
+
+
+        <form asp-controller="LoginControler" asp-action="EnviarLinkParaRedefinirSenha" method="post">
+
+         
+     
+
+            <div class="input-boxlogin">
+                <i class="fa fa-user"></i>
+                <input asp-for="Login" type="text" id="login" placeholder="Insira seu Login" />
+                @Html.ValidationMessageFor(x => x.Login)
+            </div>
+
+
+
+            <div class="input-boxlogin">
+                <i class="fa fa-envelope"></i>
+                <input asp-for="Email" type="text" id="email" placeholder="Insira seu Email" />
+                @Html.ValidationMessageFor(x => x.Email)
+            </div>
+
+
+            <div class="input-boxlogin">
+                <input type="submit" value="Redefinir Senha"/>     
+            </div>
+
+            <div class="input-boxlogin">
+                <input asp-action="Index" asp-controller="LoginControler" type="submit" value="Voltar"/>
+            </div>
+
+        </form>
+
+
+    </div>
+
+
+</div>

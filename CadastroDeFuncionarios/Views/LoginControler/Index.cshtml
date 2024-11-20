@@ -1,0 +1,75 @@
+﻿@model LoginModel
+
+@{
+    Layout = "_LayoutDeslogado";
+    ViewData["Title"] = "Login";
+}
+
+<div class="containerlogin">
+
+    <!-- Inicio Form Login -->
+
+    <div class="login-form">
+        <div class="title">Login</div>
+
+
+
+        @if (TempData["MensagemSucesso"] != null)
+        {
+
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+                @TempData["MensagemSucesso"]
+            </div>
+
+
+        }
+
+        @if (TempData["MensagemErro"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+                @TempData["MensagemErro"]
+            </div>
+
+        }
+
+        <form asp-controller="LoginControler" asp-action="Entrar" method="post">
+
+
+            <div class="input-boxlogin">
+                <i class="fa fa-envelope"></i>
+                <input asp-for="Login" type="text" id="login" placeholder="Insira seu Login" />
+                @Html.ValidationMessageFor(x => x.Login)
+            </div>
+
+            <div class="input-boxlogin">
+                <i class="fa fa-lock"></i>
+                <input asp-for="Senha" type="password" id="senha" placeholder="Insira sua Senha" />
+                @Html.ValidationMessageFor(x => x.Senha)
+            </div>
+
+
+
+            <div class="forgot">
+                <a asp-action="RedefinirSenha" asp-controller="LoginControler">Esqueceu a senha ?</a>
+            </div>
+
+
+            <div class="input-boxlogin">
+                <input type="submit" value="Entrar" />
+            </div>
+
+        </form>
+
+     
+    </div>
+
+    <!-- Imagem Login ------>
+
+    <div class="login-img">
+      <img src="IMG/img tela login.svg" width="100%" />
+    </div>
+
+
+</div>

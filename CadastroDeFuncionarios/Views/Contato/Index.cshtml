@@ -1,0 +1,76 @@
+﻿@model List<ContatoModel>
+
+
+@{
+    ViewData["Title"] = "Lista de Cadastros";
+}
+
+<div class="text-center">
+  
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-success" role="button" asp-controller="Contato" asp-action="Criar">Adicionar novos Cadastros</a>
+    </div>
+    <br/>
+
+    @if(TempData["MensagemSucesso"] != null)
+    {
+
+    <div class="alert alert-success" role="alert">
+        <button  type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+         @TempData["MensagemSucesso"]
+    </div>
+
+
+    }
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+            @TempData["MensagemErro"]
+    </div>
+
+    }
+
+    <br />
+
+    <h1 class="display-4">Cadastro de Acesso, Teto Verde</h1>
+    <br />
+<table class="table" id="table-contatos">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome Completo</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Celular</th>
+            <th scope="col">CPF/CNPJ</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+       
+            @if(Model != null && Model.Any())
+            {
+                foreach (ContatoModel contato in Model)
+                {
+                    <tr>
+                       <th scope="row">@contato.Id</th>
+                        <td>@contato.Name</td>
+                        <td>@contato.Email</td>
+                        <td>@contato.Celular</td>
+                        <td>@contato.CpfCnpj</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a asp-controller="Contato" asp-action="Editar" asp-route-id="@contato.Id" class="btn btn-success">Editar</a>
+
+                                <a asp-controller="Contato" asp-action="ApagarConfirmacao" asp-route-id="@contato.Id" class="btn btn-danger">Apagar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+
+    </tbody>
+</table>
+
+</div>
